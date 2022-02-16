@@ -4,7 +4,7 @@
 
 > In this project, I build a simple HTML list of To Do tasks. The list is styled according to the minimalist project. This simple web page is built using webpack and served by a webpack dev server.
 
-[image](https://user-images.githubusercontent.com/92645881/154267601-e7b6f237-6cdc-4797-9157-6bac7947f067.png)
+<img src="screen-shot.png"/>
 
 ## Built With
 
