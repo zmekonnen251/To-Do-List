@@ -1,0 +1,64 @@
+body {
+  background-color: #fafaf2;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wraper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  /* border: 1px solid black; */
+  margin: auto auto;
+  box-shadow: 2px 2px 2px 2px #a2a2a2;
+}
+
+.to-do-heading {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.task-input-field {
+  width: 100%;
+  padding: 12px 7px;
+  border: none;
+  box-shadow: 2px 0 #a2a2a2;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid #a2a2a2;
+  padding-bottom: 3px;
+}
+
+.three-dots {
+  flex-grow: 0;
+}
+
+.task-description {
+  flex-grow: 1;
+}
+
+.checkox {
+  flex-grow: 0;
+}
+
+.clear-button {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 100;
+}
