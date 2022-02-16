@@ -1,56 +1,25 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do list: list structure
 
-> Description the project.
+> In this project, I build a simple HTML list of To Do tasks. The list is styled according to the minimalist project. This simple web page is built using webpack and served by a webpack dev server.
 
+[image](https://user-images.githubusercontent.com/92645881/154267601-e7b6f237-6cdc-4797-9157-6bac7947f067.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- `HTML` ,`CSS` and `JavaScript`
+- Frameworks : `Webpack`
+- Technologies used: `GitHub`
 
 
-## Getting Started
+## Author
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+👤 **Zelalem Mekonnen**
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [GitHub](https://github.com/zmekonnen251)
+- Twitter: [Twitter](https://twitter.com/mek_zela)
+- LinkedIn: [Zelalem G. Mekonnen](https://www.linkedin.com/in/zelalem-getachew/)
 
 ## 🤝 Contributing
 
@@ -62,11 +31,6 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
