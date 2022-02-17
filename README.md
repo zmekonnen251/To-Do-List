@@ -21,6 +21,10 @@
 - Twitter: [Twitter](https://twitter.com/mek_zela)
 - LinkedIn: [Zelalem G. Mekonnen](https://www.linkedin.com/in/zelalem-getachew/)
 
+## Live Demo
+
+[live Demo](https://zmekonnen251.github.io/to-do-list/dist/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
