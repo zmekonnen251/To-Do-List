@@ -1,4 +1,7 @@
 import './style.css';
+import Tasks from './add-remove.js';
+import { renderTask, taskContainer } from './render-task.js';
+import checkedEvent from './checked.js';
 
 const toDoTasks = [
   { description: 'complete microverse tasks', completed: false, index: 0 },
@@ -13,6 +16,11 @@ const listContainer = document.querySelector('.to-do-list--container');
 const taskInput = document.createElement('input');
 const clearButton = document.createElement('button');
 const wraper = document.querySelector('.wraper');
+const wraper = document.querySelector('.wraper');
+const clearButton = document.createElement('button');
+
+clearButton.classList.add('clear-button');
+clearButton.textContent = 'Clear completed';
 
 taskInput.className = 'task-input-field';
 taskInput.type = 'text';
@@ -41,6 +49,19 @@ const renderList = (task) => {
   checkbox.type = 'checkbox';
   checkbox.value = 1;
   checkbox.name = 'todo[]';
+  wraper.appendChild(taskInput);
+  wraper.appendChild(taskContainer);
+
+  const toDoTask = new Tasks();
+
+  if (toDoTask.tasksToDo.length) {
+    toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
+    wraper.appendChild(clearButton);
+  }
+
+  taskContainer.addEventListener('change', (event) =>
+    checkedEvent(event, toDoTask)
+  );
 
   taskDescription.textContent = task.description;
 
