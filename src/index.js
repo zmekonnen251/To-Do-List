@@ -27,7 +27,7 @@ const checkedEvent = (event) => {
   if (event.target.classList.contains('check-box')) {
     if (event.target.checked) {
       const taskToBeFlaged = toDoTask.tasksToDo.find(
-        (task) => task.index === Number(event.target.parentNode.id)
+        (task) => task.index === Number(event.target.parentNode.id),
       );
       console.log(event.target.parentNode.id);
       taskToBeFlaged.completed = true;
