@@ -12,10 +12,8 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-
-  /* border: 1px solid black; */
   margin: auto auto;
-  box-shadow: 2px 2px 2px 2px #a2a2a2;
+  box-shadow: 2px 4px 12px 12px #d1d1e1;
 }
 
 .to-do-heading {
@@ -27,9 +25,9 @@ h1 {
 .task-input-field,
 .edit {
   width: 100%;
-  padding: 12px 7px;
+  padding: 12px 6px;
   border: none;
-  box-shadow: 2px 0 #a2a2a2;
+  box-shadow: 2px 0 #d1d1e1;
   font-size: 1rem;
 }
 
@@ -46,12 +44,19 @@ li {
   padding-bottom: 3px;
 }
 
+li p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .three-dots {
   flex-grow: 0;
 }
 
 .task-description {
   flex-grow: 1;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 2px;
+  font-style: oblique;
 }
 
 .checkox {
@@ -60,6 +65,9 @@ li {
 
 .clear-button {
   padding: 10px;
-  font-size: 18px;
-  font-weight: 100;
+  font-size: 15px;
+  font-family: monospace;
+  border: none;
+  box-shadow: 2px 2px #d1d1d1;
+  color: #717171;
 }

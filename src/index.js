@@ -29,9 +29,8 @@ const checkedEvent = (event) => {
       const taskToBeFlaged = toDoTask.tasksToDo.find(
         (task) => task.index === Number(event.target.parentNode.id),
       );
-      console.log(event.target.parentNode.id);
+
       taskToBeFlaged.completed = true;
-      console.log(taskToBeFlaged);
     }
   }
 };
@@ -40,13 +39,15 @@ taskContainer.addEventListener('change', checkedEvent);
 
 const newTask = document.querySelector('.task-input-field');
 newTask.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && newTask.value !== '') {
     const newTaskItem = {
       description: newTask.value,
       completed: false,
       index: toDoTask.tasksToDo.length,
     };
+
     toDoTask.addTask(newTaskItem);
+
     newTask.value = '';
     renderTask(newTaskItem, toDoTask);
   }
@@ -55,8 +56,8 @@ newTask.addEventListener('keypress', (event) => {
   }
 });
 
-clearButton.addEventListener('click', () => {
-  toDoTask.removeTask();
+clearButton.addEventListener('click', (event) => {
+  toDoTask.removeTask(event);
   taskContainer.innerHTML = '';
   toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
   document.location.reload();

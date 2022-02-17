@@ -7,6 +7,7 @@ const renderTask = (task, toDoTask) => {
   const checkbox = document.createElement('input');
   const taskDescription = document.createElement('p');
   const threeDots = document.createElement('i');
+  const trashIcon = document.createElement('i');
   li.id = task.index;
 
   li.className = 'task-item';
@@ -17,6 +18,12 @@ const renderTask = (task, toDoTask) => {
   threeDots.classList.add('fa-solid');
   threeDots.classList.add('fa-ellipsis-vertical');
 
+  trashIcon.classList.add('trash-icon');
+  trashIcon.classList.add('fa-solid');
+  trashIcon.classList.add('fa-trash');
+
+  trashIcon.style.color = 'red';
+
   checkbox.type = 'checkbox';
   checkbox.value = 1;
   checkbox.name = 'todo[]';
@@ -25,9 +32,12 @@ const renderTask = (task, toDoTask) => {
 
   li.appendChild(checkbox);
   li.appendChild(taskDescription);
+  li.appendChild(trashIcon);
   li.appendChild(threeDots);
 
   taskContainer.addEventListener('dblclick', (event) => editTask(event, toDoTask));
+
+  taskContainer.addEventListener('click', toDoTask.removeTask);
 
   taskContainer.appendChild(li);
 };

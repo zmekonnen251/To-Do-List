@@ -1,6 +1,4 @@
 const editTask = (event, toDoTask) => {
-  console.log('Hello');
-
   const task = event.target.innerHTML;
 
   const itemInput = document.createElement('input');
