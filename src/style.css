@@ -24,7 +24,8 @@ h1 {
   text-align: center;
 }
 
-.task-input-field {
+.task-input-field,
+.edit {
   width: 100%;
   padding: 12px 7px;
   border: none;

@@ -1,6 +1,8 @@
+import editTask from './edit-task.js';
+
 const taskContainer = document.querySelector('.to-do-list--container');
 
-const renderTask = (task) => {
+const renderTask = (task, toDoTask) => {
   const li = document.createElement('li');
   const checkbox = document.createElement('input');
   const taskDescription = document.createElement('p');
@@ -24,6 +26,8 @@ const renderTask = (task) => {
   li.appendChild(checkbox);
   li.appendChild(taskDescription);
   li.appendChild(threeDots);
+
+  taskContainer.addEventListener('dblclick', (event) => editTask(event, toDoTask));
 
   taskContainer.appendChild(li);
 };

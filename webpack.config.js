@@ -7,12 +7,15 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
-    watchFiles: ['src/**/*.html', 'src/**/*.css', 'src/**/*.js'],
   },
 
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
 
   plugins: [

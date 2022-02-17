@@ -19,7 +19,7 @@ const toDoTask = new Tasks();
 clearButton.classList.add('clear-button');
 clearButton.textContent = 'Clear completed';
 if (toDoTask.tasksToDo.length) {
-  toDoTask.tasksToDo.forEach((task) => renderTask(task));
+  toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
   wraper.appendChild(clearButton);
 }
 
@@ -27,7 +27,7 @@ const checkedEvent = (event) => {
   if (event.target.classList.contains('check-box')) {
     if (event.target.checked) {
       const taskToBeFlaged = toDoTask.tasksToDo.find(
-        (task) => task.index == event.target.parentNode.id
+        (task) => task.index === Number(event.target.parentNode.id)
       );
       console.log(event.target.parentNode.id);
       taskToBeFlaged.completed = true;
@@ -48,7 +48,7 @@ newTask.addEventListener('keypress', (event) => {
     };
     toDoTask.addTask(newTaskItem);
     newTask.value = '';
-    renderTask(newTaskItem);
+    renderTask(newTaskItem, toDoTask);
   }
   if (toDoTask.tasksToDo.length === 1) {
     wraper.appendChild(clearButton);
@@ -58,6 +58,6 @@ newTask.addEventListener('keypress', (event) => {
 clearButton.addEventListener('click', () => {
   toDoTask.removeTask();
   taskContainer.innerHTML = '';
-  toDoTask.tasksToDo.forEach((task) => renderTask(task));
+  toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
   document.location.reload();
 });
