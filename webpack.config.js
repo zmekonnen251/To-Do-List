@@ -3,16 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: ['./src/index.js', './src/add-remove.js', './src/render-task.js'],
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
-    watchFiles: ['src/**/*.html', 'src/**/*.css', 'src/**/*.js'],
   },
 
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
 
   plugins: [
