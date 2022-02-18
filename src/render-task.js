@@ -1,3 +1,4 @@
+import checkedEvent from './checked.js';
 import editTask from './edit-task.js';
 
 const taskContainer = document.querySelector('.to-do-list--container');
@@ -37,7 +38,8 @@ const renderTask = (task, toDoTask) => {
 
   taskContainer.addEventListener('dblclick', (event) => editTask(event, toDoTask));
 
-  taskContainer.addEventListener('click', toDoTask.removeTask);
+  trashIcon.addEventListener('click', toDoTask.removeTask);
+  checkbox.addEventListener('change', (event) => checkedEvent(event, toDoTask));
 
   taskContainer.appendChild(li);
 };

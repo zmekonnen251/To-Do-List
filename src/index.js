@@ -3,39 +3,26 @@ import Tasks from './add-remove.js';
 import { renderTask, taskContainer } from './render-task.js';
 
 const taskInput = document.createElement('input');
+const wraper = document.querySelector('.wraper');
+const clearButton = document.createElement('button');
 
 taskInput.className = 'task-input-field';
 taskInput.type = 'text';
 taskInput.placeholder = 'Add to your list';
 taskInput.name = 'task-input';
 
-const wraper = document.querySelector('.wraper');
-const clearButton = document.createElement('button');
-
 wraper.appendChild(taskInput);
 wraper.appendChild(taskContainer);
-const toDoTask = new Tasks();
 
 clearButton.classList.add('clear-button');
 clearButton.textContent = 'Clear completed';
+
+const toDoTask = new Tasks();
+
 if (toDoTask.tasksToDo.length) {
   toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
   wraper.appendChild(clearButton);
 }
-
-const checkedEvent = (event) => {
-  if (event.target.classList.contains('check-box')) {
-    if (event.target.checked) {
-      const taskToBeFlaged = toDoTask.tasksToDo.find(
-        (task) => task.index === Number(event.target.parentNode.id),
-      );
-
-      taskToBeFlaged.completed = true;
-    }
-  }
-};
-
-taskContainer.addEventListener('change', checkedEvent);
 
 const newTask = document.querySelector('.task-input-field');
 newTask.addEventListener('keypress', (event) => {
@@ -60,5 +47,4 @@ clearButton.addEventListener('click', (event) => {
   toDoTask.removeTask(event);
   taskContainer.innerHTML = '';
   toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
-  document.location.reload();
 });

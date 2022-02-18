@@ -1,9 +1,10 @@
 export default class Tasks {
   constructor() {
-    this.tasksToDo = JSON.parse(localStorage.getItem('storedTask')) || [];
+    this.tasksToDo = JSON.parse(window.localStorage.getItem('storedTask')) || [];
     this.saveTask = this.saveTask.bind(this);
-    this.removeTask = this.removeTask.bind(this);
+
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   addTask(task) {
@@ -13,22 +14,22 @@ export default class Tasks {
 
   removeTask(event) {
     if (event.target.classList.contains('trash-icon')) {
-      const indexToBeRemoved = Number(event.target.parentNode.id);
+      const indexToBeRemoved = event.target.parentNode.id;
       this.tasksToDo.splice(indexToBeRemoved, 1);
       event.target.parentNode.remove();
+      this.tasksToDo.forEach((task) => {
+        task.index = this.tasksToDo.indexOf(task);
+      });
+      window.localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
     }
 
-    for (let i = 0; i < this.tasksToDo.length; i += 1) {
-      if (this.tasksToDo[i].completed) {
-        this.tasksToDo.splice(i, 1);
-      }
-    }
+    this.tasksToDo = this.tasksToDo.filter((task) => !task.completed);
 
     this.tasksToDo.forEach((task) => {
       task.index = this.tasksToDo.indexOf(task);
     });
 
-    localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
+    window.localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
   }
 
   saveTask(event) {
@@ -38,7 +39,7 @@ export default class Tasks {
       const editIndex = editInput.parentNode.id;
 
       this.tasksToDo[editIndex].description = editInput.value;
-      localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
+      window.localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
 
       const p = document.createElement('p');
       p.className = 'task-description';

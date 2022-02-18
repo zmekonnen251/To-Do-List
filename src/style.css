@@ -32,6 +32,9 @@ h1 {
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   list-style: none;
   padding: 0;
 }
@@ -40,8 +43,9 @@ li {
   display: flex;
   gap: 20px;
   align-items: center;
-  border-bottom: 1px solid #a2a2a2;
-  padding-bottom: 3px;
+  box-shadow: 2px 2px 4px 4px #d1d1d1;
+  padding: 5px;
+  padding-right: 8px;
 }
 
 li p {
@@ -68,6 +72,10 @@ li p {
   font-size: 15px;
   font-family: monospace;
   border: none;
-  box-shadow: 2px 2px #d1d1d1;
-  color: #717171;
+  box-shadow: 4px 4px 15px 15px #d1d1d1;
+  color: #160606;
+}
+
+.dn {
+  display: none;
 }
