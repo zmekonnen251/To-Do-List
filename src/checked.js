@@ -1,13 +1,11 @@
 const checkedEvent = (event, toDoTask) => {
   if (event.target.classList.contains('check-box')) {
     if (event.target.checked) {
-      const taskToBeFlaged = toDoTask.tasksToDo.find(
-        (task) => task.index === Number(event.target.parentNode.id),
-      );
-
-      taskToBeFlaged.completed = true;
+      const checkedIndex = event.target.parentNode.id;
+      toDoTask.tasksToDo[checkedIndex].completed = true;
     }
   }
+  localStorage.setItem('storedTask', JSON.stringify(toDoTask.tasksToDo));
 };
 
 export default checkedEvent;

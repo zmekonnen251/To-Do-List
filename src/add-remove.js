@@ -16,6 +16,10 @@ export default class Tasks {
       const indexToBeRemoved = Number(event.target.parentNode.id);
       this.tasksToDo.splice(indexToBeRemoved, 1);
       event.target.parentNode.remove();
+      this.tasksToDo.forEach((task) => {
+        task.index = this.tasksToDo.indexOf(task);
+      });
+      localStorage.setItem('storedTask', JSON.stringify(this.tasksToDo));
     }
 
     for (let i = 0; i < this.tasksToDo.length; i += 1) {

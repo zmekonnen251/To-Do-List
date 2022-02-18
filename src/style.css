@@ -71,3 +71,7 @@ li p {
   box-shadow: 2px 2px #d1d1d1;
   color: #717171;
 }
+
+.dn {
+  display: none;
+}
