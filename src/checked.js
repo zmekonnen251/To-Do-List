@@ -5,7 +5,7 @@ const checkedEvent = (event, toDoTask) => {
       toDoTask.tasksToDo[checkedIndex].completed = true;
     }
   }
-  localStorage.setItem('storedTask', JSON.stringify(toDoTask.tasksToDo));
+  window.localStorage.setItem('storedTask', JSON.stringify(toDoTask.tasksToDo));
 };
 
 export default checkedEvent;

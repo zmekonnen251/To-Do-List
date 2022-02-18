@@ -1,7 +1,6 @@
 import './style.css';
 import Tasks from './add-remove.js';
 import { renderTask, taskContainer } from './render-task.js';
-import checkedEvent from './checked.js';
 
 const taskInput = document.createElement('input');
 const wraper = document.querySelector('.wraper');
@@ -24,8 +23,6 @@ if (toDoTask.tasksToDo.length) {
   toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
   wraper.appendChild(clearButton);
 }
-
-taskContainer.addEventListener('change', (event) => checkedEvent(event, toDoTask));
 
 const newTask = document.querySelector('.task-input-field');
 newTask.addEventListener('keypress', (event) => {
@@ -50,5 +47,4 @@ clearButton.addEventListener('click', (event) => {
   toDoTask.removeTask(event);
   taskContainer.innerHTML = '';
   toDoTask.tasksToDo.forEach((task) => renderTask(task, toDoTask));
-  document.location.reload();
 });
