@@ -4,6 +4,7 @@ export default class Tasks {
     this.saveTask = this.saveTask.bind(this);
 
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   addTask(task) {
@@ -13,7 +14,7 @@ export default class Tasks {
 
   removeTask(event) {
     if (event.target.classList.contains('trash-icon')) {
-      const indexToBeRemoved = Number(event.target.parentNode.id);
+      const indexToBeRemoved = event.target.parentNode.id;
       this.tasksToDo.splice(indexToBeRemoved, 1);
       event.target.parentNode.remove();
       this.tasksToDo.forEach((task) => {
