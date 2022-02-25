@@ -23,7 +23,7 @@
 
 ## Live Demo
 
-[live Demo](https://zmekonnen251.github.io/to-do-list/dist/)
+[live Demo](https://wonderful-carson-a4a22b.netlify.app/)
 
 ## 🤝 Contributing
 
